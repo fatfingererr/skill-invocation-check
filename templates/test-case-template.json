@@ -1,0 +1,66 @@
+{
+  "skill_name": "",
+  "description_version": "v1.0",
+  "created_at": "",
+  "test_cases": [
+    {
+      "id": 1,
+      "query": "请帮我做一个详细的 code review，看看这个 PR 有没有安全漏洞",
+      "should_trigger": true,
+      "category": "formal",
+      "rationale": "明确提到 code review + 安全维度，符合 skill 核心场景"
+    },
+    {
+      "id": 2,
+      "query": "帮我看一下这段 code",
+      "should_trigger": true,
+      "category": "informal",
+      "rationale": "口语表述「看一下」隐含 review 意图"
+    },
+    {
+      "id": 3,
+      "query": "这个 function 写得好吗",
+      "should_trigger": true,
+      "category": "implicit",
+      "rationale": "没直接说 review 但意图明确"
+    },
+    {
+      "id": 4,
+      "query": "PR #123 里面的 auth.ts 和 utils.ts 改动麻烦帮我 review，主要看有没有 race condition",
+      "should_trigger": true,
+      "category": "contextual",
+      "rationale": "带具体文件路径和上下文，真实使用场景"
+    },
+    {
+      "id": 5,
+      "query": "帮我写一个计算斐波那契数列的函数",
+      "should_trigger": false,
+      "category": "unrelated",
+      "rationale": "是 coding task 不是 review，明显不该触发"
+    },
+    {
+      "id": 6,
+      "query": "这个 function 的命名我想改一下，user 改成 currentUser 你觉得呢",
+      "should_trigger": false,
+      "category": "edge_case",
+      "rationale": "是寻求意见不是 review，边缘情况"
+    },
+    {
+      "id": 7,
+      "query": "跑一下 unit test",
+      "should_trigger": false,
+      "category": "adjacent",
+      "rationale": "是 test 不是 review，相邻但不同领域"
+    }
+  ],
+  "categories": {
+    "formal": "正式表述",
+    "informal": "口语表述",
+    "implicit": "隐含意图（没直接提 skill 名）",
+    "contextual": "带上下文（文件路径、前因后果）",
+    "typo": "有错字或缩写",
+    "unrelated": "明显无关",
+    "edge_case": "边缘情况",
+    "adjacent": "相邻领域（容易混淆）"
+  }
+}
