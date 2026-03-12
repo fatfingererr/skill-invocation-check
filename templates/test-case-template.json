@@ -15,7 +15,7 @@
       "query": "帮我看一下这段 code",
       "should_trigger": true,
       "category": "informal",
-      "rationale": "口语表述「看一下」隐含 review 意图"
+      "rationale": "口语表述"看一下"隐含 review 意图"
     },
     {
       "id": 3,
